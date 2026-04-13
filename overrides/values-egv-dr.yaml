@@ -4,7 +4,7 @@ waitForMetalNode: false
 
 vmDefaults:
   accessMode: "ReadWriteMany"
-  storageClassName: "ocs-storagecluster-ceph-rbd-virtualization"
+  storageClassName: "pstore1"
   volumeMode: "Block"
   count: 1
   flavor: medium
