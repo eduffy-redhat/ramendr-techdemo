@@ -15,6 +15,11 @@ clusterGroup:
     - aap-config
     - ansible-automation-platform
     - s4
+
+  indexImages:
+    altramen:
+      image: quay.io/nnevin/odf-multicluster-orchestrator-catalog:idmap
+
   subscriptions:
 #    aap-operator:
 #      name: ansible-automation-platform-operator
@@ -28,6 +33,7 @@ clusterGroup:
 
     odf-multicluster-orchestrator:
       name: odf-multicluster-orchestrator
+      source: altramen
       namespace: openshift-operators
 
 #    openshift-data-foundation:
