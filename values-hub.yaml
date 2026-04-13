@@ -18,6 +18,7 @@ clusterGroup:
 
   indexImages:
     altramen:
+      name: nnevin-odf-multicluster-orchestrator-catalog
       image: quay.io/nnevin/odf-multicluster-orchestrator-catalog:idmap
 
   subscriptions:
@@ -33,7 +34,7 @@ clusterGroup:
 
     odf-multicluster-orchestrator:
       name: odf-multicluster-orchestrator
-      source: altramen
+      source: nnevin-odf-multicluster-orchestrator-catalog
       namespace: openshift-operators
 
 #    openshift-data-foundation:
