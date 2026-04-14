@@ -191,8 +191,8 @@ clusterGroup:
       namespace: s4
       project: hub
       chartVersion: main
-      repoURL: https://github.com/rh-aiservices-bu/s4.git
-      path: 'charts/s4/'
+      repoURL: https://github.com/eduffy-redhat/s4-ramendr.git
+      path: '.'
       extraValueFiles:
         - '$patternref/overrides/values-s4-chart.yaml'
       overrides:
