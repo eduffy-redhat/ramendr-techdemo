@@ -1,4 +1,6 @@
 ---
+{{- $primarySuffix := randAlphaNum 4 }}
+{{- $secondarySuffix := randAlphaNum 4 }}
 # Minimal override for DR cluster names, versions, and regions.
 # This file is applied after chart defaults (override merged last). It only contains overlay keys
 # (clusterOverrides, drpc) so chart regionalDR defaults are preserved.
@@ -6,20 +8,20 @@
 
 clusterOverrides:
   primary:
-    name: ocp-primary
+    name: ocp-primary-{{ $primarySuffix }}
     version: 4.18.7
     install_config:
       metadata:
-        name: ocp-primary
+        name: ocp-primary-{{ $primarySuffix }}
       platform:
         aws:
           region: us-west-1
   secondary:
-    name: ocp-secondary
+    name: ocp-secondary-{{ $secondarySuffix }}
     version: 4.18.7
     install_config:
       metadata:
-        name: ocp-secondary
+        name: ocp-secondary-{{ $secondarySuffix }}
       platform:
         aws:
           region: us-east-1
