@@ -13,6 +13,9 @@ image:
   # -- Image pull policy
   pullPolicy: Always
 
+# -- Buckets that will be created during startup
+bootstrapBuckets: []
+
 # -- Image pull secrets for private registries
 imagePullSecrets: []
 
