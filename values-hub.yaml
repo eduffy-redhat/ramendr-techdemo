@@ -103,65 +103,65 @@ clusterGroup:
       extraValueFiles:
         - '$patternref/overrides/values-console-plugins-hub-alt.yaml'
 
-#    opp-policy:
-#      name: opp-policy
-#      namespace: openshift
-#      project: opp
-#      repoURL: https://github.com/validatedpatterns/opp-policy-chart.git
-#      chartVersion: main
-#      path: "."
-#      annotations:
-#        argocd.argoproj.io/sync-wave: "5"
-#      syncPolicy:
-#        automated: {}
-#        retry:
-#          limit: 20
-#          backoff:
-#            duration: 5s
-#            factor: 2
-#            maxDuration: 3m
-#        syncOptions:
-#          - syncTimeout=3600s
-#          - CreateNamespace=true
-#          - PrunePropagationPolicy=foreground
-#          - RespectIgnoreDifferences=true
-#          - ServerSideApply=true
-#      extraValueFiles:
-#        - '/overrides/values-cluster-names.yaml'
-#      ignoreDifferences:
-#      - group: operators.openshift.io
-#        kind: Console
-#        jsonPointers:
-#          - /spec/plugins
-#
-#    rdr:
-#      name: regional-dr
-#      namespace: regional-dr
-#      project: opp
-#      repoURL: https://github.com/validatedpatterns/regionaldr-with-virt-chart.git
-#      chartVersion: main
-#      path: "."
-#      annotations:
-#        argocd.argoproj.io/sync-wave: "10"
-#      syncPolicy:
-#        automated: {}
-#        # We have to wait for the clusters to build, whcih can take a long time
-#        retry:
-#          limit: 60
-#          backoff:
-#            duration: 5s
-#            factor: 2
-#            maxDuration: 3m
-#        syncOptions:
-#          - RespectIgnoreDifferences=true
-#      extraValueFiles:
-#        - '/overrides/values-cluster-names.yaml'
-#        - '/overrides/values-egv-dr.yaml'
-#      ignoreDifferences:
-#        # Prevent ArgoCD from pruning dynamically created OCM resources
-#        # These resources are created by OCM operators and should never be pruned
-#        - group: internal.open-cluster-management.io
-#          kind: ManagedClusterInfo
+    opp-policy:
+      name: opp-policy
+      namespace: openshift
+      project: opp
+      repoURL: https://github.com/validatedpatterns/opp-policy-chart.git
+      chartVersion: main
+      path: "."
+      annotations:
+        argocd.argoproj.io/sync-wave: "5"
+      syncPolicy:
+        automated: {}
+        retry:
+          limit: 20
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 3m
+        syncOptions:
+          - syncTimeout=3600s
+          - CreateNamespace=true
+          - PrunePropagationPolicy=foreground
+          - RespectIgnoreDifferences=true
+          - ServerSideApply=true
+      extraValueFiles:
+        - '/overrides/values-cluster-names.yaml'
+      ignoreDifferences:
+      - group: operators.openshift.io
+        kind: Console
+        jsonPointers:
+          - /spec/plugins
+
+    rdr:
+      name: regional-dr
+      namespace: regional-dr
+      project: opp
+      repoURL: https://github.com/validatedpatterns/regionaldr-with-virt-chart.git
+      chartVersion: main
+      path: "."
+      annotations:
+        argocd.argoproj.io/sync-wave: "10"
+      syncPolicy:
+        automated: {}
+        # We have to wait for the clusters to build, whcih can take a long time
+        retry:
+          limit: 60
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 3m
+        syncOptions:
+          - RespectIgnoreDifferences=true
+      extraValueFiles:
+        - '/overrides/values-cluster-names.yaml'
+        - '/overrides/values-egv-dr.yaml'
+      ignoreDifferences:
+        # Prevent ArgoCD from pruning dynamically created OCM resources
+        # These resources are created by OCM operators and should never be pruned
+        - group: internal.open-cluster-management.io
+          kind: ManagedClusterInfo
 
     vault:
       name: vault
