@@ -6,27 +6,27 @@
 
 clusterOverrides:
   primary:
-    name: 'ocp-primary-{{ $.Values.global.localClusterName }}'
+    name: 'ocp-primary-eduffy-2026-04-23'
     version: 4.18.7
     install_config:
       metadata:
-        name: 'ocp-primary-{{ $.Values.global.localClusterName }}'
+        name: 'ocp-primary-eduffy-2026-04-23'
       platform:
         aws:
           region: us-west-1
   secondary:
-    name: 'ocp-secondary-{{ $.Values.global.localClusterName }}'
+    name: 'ocp-secondary-eduffy-2026-04-23'
     version: 4.18.7
     install_config:
       metadata:
-        name: 'ocp-secondary-{{ $.Values.global.localClusterName }}'
+        name: 'ocp-secondary-eduffy-2026-04-23'
       platform:
         aws:
           region: us-east-1
 
 # DRPC overrides (preferredCluster defaults to primary if unset)
 drpc:
-  preferredCluster: 'ocp-primary-{{ $.Values.global.localClusterName }}'
+  preferredCluster: 'ocp-primary-eduffy-2026-04-23'
   protectedNamespaces:
     - gitops-vms
     - boutique
