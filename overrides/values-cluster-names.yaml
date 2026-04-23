@@ -7,7 +7,7 @@
 clusterOverrides:
   primary:
     name: 'ocp-primary-eduffy-2026-04-23'
-    version: 4.18.7
+    version: 4.18.37
     install_config:
       metadata:
         name: 'ocp-primary-eduffy-2026-04-23'
@@ -16,7 +16,7 @@ clusterOverrides:
           region: us-west-1
   secondary:
     name: 'ocp-secondary-eduffy-2026-04-23'
-    version: 4.18.7
+    version: 4.18.37
     install_config:
       metadata:
         name: 'ocp-secondary-eduffy-2026-04-23'
