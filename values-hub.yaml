@@ -162,15 +162,15 @@ clusterGroup:
         # These resources are created by OCM operators and should never be pruned
         - group: internal.open-cluster-management.io
           kind: ManagedClusterInfo
-      overrides:
-        - name: clusterOverrides.primary.install_config.metadata.name
-          value: 'ocp-primary-{{ $.Values.global.localClusterName }}'
-        - name: clusterOverrides.primary.name
-          value: 'ocp-primary-{{ $.Values.global.localClusterName }}'
-        - name: clusterOverrides.secondary.install_config.metadata.name
-          value: 'ocp-secondary-{{ $.Values.global.localClusterName }}'
-        - name: clusterOverrides.secondary.name
-          value: 'ocp-secondary-{{ $.Values.global.localClusterName }}'
+#       overrides:
+#         - name: clusterOverrides.primary.install_config.metadata.name
+#           value: 'ocp-primary-{{ $.Values.global.localClusterName }}'
+#         - name: clusterOverrides.primary.name
+#           value: 'ocp-primary-{{ $.Values.global.localClusterName }}'
+#         - name: clusterOverrides.secondary.install_config.metadata.name
+#           value: 'ocp-secondary-{{ $.Values.global.localClusterName }}'
+#         - name: clusterOverrides.secondary.name
+#           value: 'ocp-secondary-{{ $.Values.global.localClusterName }}'
 
     vault:
       name: vault
