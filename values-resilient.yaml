@@ -48,9 +48,9 @@ clusterGroup:
       namespace: openshift-workload-availability
       channel: stable
 
-#    openshift-data-foundation:
-#      name: odf-operator
-#      namespace: openshift-storage
+    openshift-data-foundation:
+      name: odf-operator
+      namespace: openshift-storage
 
     openshift-oadp:
       name: redhat-oadp-operator
