@@ -114,14 +114,14 @@ clusterGroup:
         - name: cnv.debug.useEmulation
           value: "true"
 
-#    odf:
-#      name: odf
-#      namespace: openshift-storage
-#      project: resilient
-#      chart: openshift-data-foundations
-#      chartVersion: 0.2.*
-#      extraValueFiles:
-#        - '$patternref/overrides/values-odf-chart.yaml'
+    odf:
+      name: odf
+      namespace: openshift-storage
+      project: resilient
+      chart: openshift-data-foundations
+      chartVersion: 0.2.*
+      extraValueFiles:
+        - '$patternref/overrides/values-odf-chart.yaml'
 
     node-health-check-operator:
       name: node-health-check-operator
