@@ -138,7 +138,7 @@ clusterGroup:
       name: regional-dr
       namespace: regional-dr
       project: opp
-      repoURL: https://github.com/validatedpatterns/regionaldr-with-virt-chart.git
+      repoURL: https://github.com/eduffy-redhat/regionaldr-with-virt-chart
       chartVersion: main
       path: "."
       annotations:
