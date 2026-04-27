@@ -133,6 +133,15 @@ clusterGroup:
         kind: Console
         jsonPointers:
           - /spec/plugins
+      overrides:
+        - name: clusterOverrides.primary.install_config.metadata.name
+          value: 'ocp-primary-{{ $.Values.global.localClusterName }}'
+        - name: clusterOverrides.primary.name
+          value: 'ocp-primary-{{ $.Values.global.localClusterName }}'
+        - name: clusterOverrides.secondary.install_config.metadata.name
+          value: 'ocp-secondary-{{ $.Values.global.localClusterName }}'
+        - name: clusterOverrides.secondary.name
+          value: 'ocp-secondary-{{ $.Values.global.localClusterName }}'
 
     rdr:
       name: regional-dr
